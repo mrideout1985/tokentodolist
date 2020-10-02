@@ -1,0 +1,111 @@
+@import "../../styles/abstracts/mixins";
+
+.container {
+	width: 100%;
+	background-color: #6b5b95;
+	height: 100vh;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	flex-direction: column;
+	overflow: scroll;
+
+	&__input {
+		background-color: #6b5b95;
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: flex-start;
+		margin-top: 4.5rem;
+		box-sizing: border-box;
+		height: 4rem;
+
+		@include respond(phone) {
+			margin-top: 1rem;
+		}
+
+		input {
+			width: 25rem;
+			border-radius: 10px;
+			border: none;
+			outline: none;
+			text-align: center;
+			text-transform: uppercase;
+			font-family: monospace;
+			font-size: 1.5rem;
+
+			@include respond(phone) {
+				width: auto;
+				font-size: 1.2rem;
+			}
+
+			&:focus {
+				box-shadow: 0 0 0 4px #feb236;
+			}
+		}
+	}
+
+	&__list {
+		background-color: #6b5b95;
+		height: 100%;
+		width: 100%;
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+		flex-direction: column;
+
+		.todos {
+			width: 50%;
+			height: 2.5rem;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			position: relative;
+			font-family: monospace;
+			font-size: 2rem;
+			background-color: #d64161;
+			border-radius: 10px;
+			margin: 0.3rem;
+			transition: 0.25s ease-in-out;
+			text-transform: uppercase;
+
+			@include respond(phone) {
+				width: 90%;
+				font-size: 1rem;
+				justify-content: center;
+			}
+
+			&:hover {
+				transform: scale(1.1);
+				font-size: 2.5rem;
+				font-weight: 900;
+
+				@include respond(phone) {
+					font-size: 1.5rem;
+				}
+			}
+
+			&:nth-child(2n + 0) {
+				background-color: #feb236;
+			}
+
+			&:nth-child(3n + 0) {
+				background-color: #36aefe;
+			}
+
+			.btn {
+				position: absolute;
+				right: 0;
+				border: none;
+				font-size: 1rem;
+				border-radius: 10px;
+				padding: 0.4rem;
+				margin: 1rem;
+
+				&:hover {
+					box-shadow: 0 0 0 4px black;
+				}
+			}
+		}
+	}
+}
